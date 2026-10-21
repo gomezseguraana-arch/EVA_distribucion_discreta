@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b154e">
+  <meta name="description" content="EVA interactivo sobre la distribución de Poisson: teoría, simulador, calculadora, aplicaciones y autoevaluación. Grupo 5, Probabilidad y Estadística.">
+  <title>Distribución de Poisson · EVA Interactivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación por módulos">
+      <a class="brand" href="#inicio" aria-label="Inicio EVA Poisson">
+        <span class="brand-mark">λ</span>
+        <span class="brand-copy"><strong>Poisson<span class="brand-dot">.</span></strong><small>Laboratorio de probabilidad</small></span>
+      </a>
+      <div class="side-group-label">TU RECORRIDO</div>
+      <nav class="side-nav">
+        <a href="#inicio" class="nav-link active" data-nav="inicio"><span class="nav-icon">⌂</span><span>Bienvenida</span></a>
+        <a href="#concepto" class="nav-link" data-nav="concepto"><span class="nav-count">01</span><span>¿Qué es Poisson?</span></a>
+        <a href="#caracteristicas" class="nav-link" data-nav="caracteristicas"><span class="nav-count">02</span><span>Características</span></a>
+        <a href="#aplicaciones" class="nav-link" data-nav="aplicaciones"><span class="nav-count">03</span><span>Aplicaciones</span></a>
+        <a href="#condiciones" class="nav-link" data-nav="condiciones"><span class="nav-count">04</span><span>Condiciones</span></a>
+        <a href="#parametro" class="nav-link" data-nav="parametro"><span class="nav-count">05</span><span>Parámetro λ</span></a>
+        <a href="#funcion" class="nav-link" data-nav="funcion"><span class="nav-count">06</span><span>Probabilidades</span></a>
+        <a href="#medidas" class="nav-link" data-nav="medidas"><span class="nav-count">07</span><span>Media y varianza</span></a>
+        <a href="#grafico" class="nav-link" data-nav="grafico"><span class="nav-count">08</span><span>Gráfico interactivo</span></a>
+        <a href="#ejemplo" class="nav-link" data-nav="ejemplo"><span class="nav-count">09</span><span>Ejemplo resuelto</span></a>
+        <a href="#evaluacion" class="nav-link" data-nav="evaluacion"><span class="nav-count">10</span><span>Autoevaluación</span></a>
+      </nav>
+      <div class="side-bottom">
+        <span class="side-subheading">MATERIAL DEL GRUPO</span>
+        <a href="mapa-interactivo/index.html" target="_blank" rel="noopener">↗ Mapa conceptual</a>
+        <a href="recursos/ficha-conceptual-poisson.pdf" target="_blank" rel="noopener">↗ Ficha conceptual</a>
+        <a href="#recursos">↗ Todos los recursos</a>
+        <div class="sidebar-footer">Grupo 5 · Fase 4<br>Probabilidad y Estadística</div>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button type="button" class="mobile-menu" id="menu-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menú">☰</button>
+        <span class="top-title">Aula virtual / <strong>Distribuciones discretas</strong></span>
+        <div class="top-right"><span class="status-dot" aria-hidden="true"></span><span>Recurso de aprendizaje</span><span class="top-chip">FASE 4</span></div>
+      </header>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+        <a href="#inicio">Inicio</a><a href="#concepto">Teoría</a><a href="#grafico">Simulador</a><a href="#ejemplo">Ejemplo</a><a href="#evaluacion">Evaluación</a><a href="#recursos">Recursos</a>
+      </nav>
+      <main id="contenido">
+        <section id="inicio" class="hero section-observed">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow eyebrow-light"><span class="tiny-star">✦</span> ENTORNO VIRTUAL DE APRENDIZAJE</span>
+              <h1>Comprendé la<br><em>distribución</em><br>de <span>Poisson.</span></h1>
+              <p class="hero-desc">¿Cuántas veces puede ocurrir un evento? Explorá un modelo para contar sucesos, calcular probabilidades y descubrir qué significa su parámetro <strong>λ</strong>.</p>
+              <div class="hero-actions"><a class="btn btn-white" href="#concepto">Comenzar recorrido <span aria-hidden="true">↗</span></a><a class="btn btn-outline-light" href="#grafico">Probar el simulador</a></div>
+              <div class="hero-metadata"><span>10 contenidos</span><i aria-hidden="true"></i><span>Gráfico dinámico</span><i aria-hidden="true"></i><span>Evaluación final</span></div>
+            </div>
+            <div class="hero-visual" aria-label="Ilustración de barras de una distribución de Poisson">
+              <div class="glow glow-one"></div><div class="glow glow-two"></div>
+              <div class="visual-card"><div class="visual-head"><span>Probabilidad de eventos</span><span class="visual-tag">λ = 4</span></div>
+                <div class="hero-bars" aria-hidden="true"><span style="--h:12%"></span><span style="--h:44%"></span><span style="--h:75%"></span><span style="--h:100%"></span><span style="--h:95%"></span><span style="--h:77%"></span><span style="--h:51%"></span><span style="--h:28%"></span><span style="--h:15%"></span></div>
+                <div class="visual-x"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+                <div class="visual-caption"><span class="visual-pill">X = número de ocurrencias</span><span class="visual-dot">●</span></div>
+              </div><div class="float-pill float-top">P(X = k)</div><div class="float-pill float-bottom">E(X) = λ</div>
+            </div>
+          </div>
+          <div class="hero-bottom"><span>UNA EXPERIENCIA PARA APRENDER HACIENDO</span><a href="#concepto" aria-label="Ir al primer módulo">↓</a></div>
+        </section>
+
+        <div class="content-wrap">
+          <div class="intro-strip"><div><span class="intro-emoji">✦</span><strong>Tu misión de aprendizaje</strong><p>Al finalizar, podrás identificar cuándo conviene usar Poisson, interpretar λ y calcular probabilidades de conteo.</p></div><a href="#evaluacion" class="text-link">Ir a la autoevaluación ↗</a></div>
+
+          <section id="concepto" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 01 · FUNDAMENTOS</span><h2>¿Qué es la distribución de Poisson?</h2><p>Empecemos con la pregunta que este modelo estadístico permite responder.</p></div><div class="section-number">01<span>/10</span></div></div>
+            <div class="two-col two-col-wide">
+              <article class="panel intro-panel"><div class="mini-icon">◎</div><h3>Un modelo para contar eventos</h3><p>La distribución de Poisson es una <strong>distribución de probabilidad discreta</strong> que modela el número de veces que ocurre un evento dentro de un intervalo definido de tiempo, espacio o región, bajo ciertas condiciones.</p><p>En lugar de medir <em>cuánto dura</em> algo, contamos <em>cuántas veces sucede</em>.</p><div class="example-line"><span>Por ejemplo</span> ¿Cuántas llamadas recibe un servicio de urgencias en una hora?</div></article>
+              <article class="panel focus-panel"><span class="small-label">LA VARIABLE ALEATORIA</span><div class="big-formula">X ∈ {0, 1, 2, 3, …}</div><p><strong>X</strong> representa una cantidad de ocurrencias: 0 llamadas, 1 llamada, 2 llamadas, etc.</p><div class="note-small">No puede tomar valores como 1,5 llamadas.</div></article>
+            </div>
+            <div class="video-block"><div class="video-header"><div><span class="module-kicker">RECORRIDO AUDIOVISUAL · FASE 1</span><h3>Aprendé también con los videos seleccionados</h3><p>Estos recursos fueron elegidos por el grupo por su explicación gradual y sus ejemplos.</p></div></div>
+              <div class="resource-grid two">
+                <a class="video-card" href="https://youtu.be/NGwiwYEpDNA?si=BnqbmeBHu6rJ28n0" target="_blank" rel="noopener"><span class="play-circle">▶</span><div><small>VIDEO 01 · RENÉ RÍOS</small><strong>Introducción a Poisson</strong><span>Ver en YouTube ↗</span></div></a>
+                <a class="video-card" href="https://youtu.be/PMX75m4-s9A?si=E0bR6-H5t9a0vqpT" target="_blank" rel="noopener"><span class="play-circle">▶</span><div><small>VIDEO 02 · MATEMÓVIL</small><strong>Poisson: ejercicios resueltos</strong><span>Ver en YouTube ↗</span></div></a>
+              </div>
+            </div>
+          </section>
+
+          <section id="caracteristicas" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 02 · PROPIEDADES</span><h2>Características principales</h2><p>Reconocé lo que distingue a una variable de Poisson.</p></div><div class="section-number">02<span>/10</span></div></div>
+            <div class="features-grid">
+              <article class="feature"><div class="feature-icon lavender">01</div><h3>Es discreta</h3><p>Los resultados posibles son números enteros no negativos.</p></article>
+              <article class="feature"><div class="feature-icon pink">02</div><h3>Cuenta ocurrencias</h3><p>La variable registra cuántos eventos se observan en un intervalo.</p></article>
+              <article class="feature"><div class="feature-icon blue">03</div><h3>Tiene un parámetro</h3><p>Depende de <strong>λ</strong>, el número medio de eventos esperado en el intervalo.</p></article>
+              <article class="feature"><div class="feature-icon orange">04</div><h3>Media = varianza</h3><p>Una propiedad del modelo es <strong>E(X) = Var(X) = λ</strong>.</p></article>
+            </div>
+            <div class="inline-resource"><div><span class="mini-icon lilac">⌘</span><div><strong>¿Preferís una visión general?</strong><p>Explorá el mapa conceptual interactivo elaborado durante la Fase 2.</p></div></div><a class="btn btn-soft" href="mapa-interactivo/index.html" target="_blank" rel="noopener">Abrir mapa ↗</a></div>
+          </section>
+
+          <section id="aplicaciones" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 03 · VIDA REAL</span><h2>¿En qué situaciones se utiliza?</h2><p>La unidad de observación cambia, pero la idea sigue siendo contar ocurrencias.</p></div><div class="section-number">03<span>/10</span></div></div>
+            <div class="application-grid">
+              <article class="app-card"><span class="app-symbol">✚</span><strong>Salud</strong><p>Pacientes que llegan a un consultorio por hora.</p><small>Intervalo: 1 hora</small></article>
+              <article class="app-card"><span class="app-symbol">☎</span><strong>Atención telefónica</strong><p>Llamadas recibidas en una central durante un turno.</p><small>Intervalo: 1 turno</small></article>
+              <article class="app-card"><span class="app-symbol">⚙</span><strong>Ingeniería</strong><p>Fallas registradas en un sistema durante un día.</p><small>Intervalo: 1 día</small></article>
+              <article class="app-card"><span class="app-symbol">⌘</span><strong>Ciencias de Datos</strong><p>Mensajes recibidos por un servidor en un minuto.</p><small>Intervalo: 1 minuto</small></article>
+            </div>
+            <div class="muted-notice"><strong>Atención:</strong> estos son contextos potenciales de uso. Que un problema implique contar eventos no garantiza, por sí solo, que Poisson sea adecuado: hay que comprobar sus supuestos.</div>
+          </section>
+
+          <section id="condiciones" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 04 · ALGORITMO DE DECISIÓN</span><h2>¿Cuándo conviene usar Poisson?</h2><p>Evaluá las condiciones antes de utilizar el modelo. No se aplica automáticamente a cualquier conteo.</p></div><div class="section-number">04<span>/10</span></div></div>
+            <div class="two-col two-col-wide conditions-layout">
+              <div class="panel conditions-panel"><h3>Condiciones que conviene revisar</h3><ul class="check-list"><li><span>✓</span><div><strong>Variable de conteo.</strong> Interesa el número de ocurrencias, no una duración ni una medida continua.</div></li><li><span>✓</span><div><strong>Intervalo definido.</strong> Se observa un período o una región concreta.</div></li><li><span>✓</span><div><strong>Tasa estable.</strong> El promedio de ocurrencias por unidad se mantiene aproximadamente constante.</div></li><li><span>✓</span><div><strong>Independencia aproximada.</strong> Que ocurra un evento no altera sustancialmente la probabilidad de los siguientes.</div></li></ul><div class="fine-print">En el modelo clásico de proceso de Poisson, la probabilidad de dos o más eventos en un intervalo muy pequeño es despreciable. Los eventos no tienen que ser siempre «raros» para utilizar Poisson.</div></div>
+              <div class="decision-card" id="decision-card"><div class="decision-card-top"><span>DECISIÓN GUIADA</span><span id="decision-counter">Paso 1 de 4</span></div><div class="decision-progress"><span id="decision-progress-bar"></span></div><div id="decision-body" aria-live="polite"><div class="question-blob">?</div><h3 id="decision-question">¿Se está contando una cantidad de ocurrencias?</h3><p id="decision-help">Por ejemplo: llamadas por hora o fallas por día.</p></div><div class="decision-actions"><button type="button" class="btn btn-white" id="decision-yes">Sí, se cumple</button><button type="button" class="btn btn-outline-light" id="decision-no">No</button><button type="button" class="decision-reset" id="decision-reset">Reiniciar ↻</button></div></div>
+            </div>
+          </section>
+
+          <section id="parametro" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 05 · SIGNIFICADO</span><h2>El parámetro λ (lambda)</h2><p>Una sola cantidad controla el comportamiento de la distribución.</p></div><div class="section-number">05<span>/10</span></div></div>
+            <div class="two-col">
+              <article class="panel lambda-card"><span class="small-label">VALOR MEDIO EN EL INTERVALO</span><div class="lambda-big">λ</div><h3>Lambda es el promedio esperado de ocurrencias.</h3><p>Es un número <strong>mayor que cero</strong>. No es una probabilidad: puede valer 0,5; 4 o 12, entre otros valores.</p><div class="rule">λ &gt; 0</div></article>
+              <article class="panel timeline-card"><span class="small-label">CAMBIAR EL INTERVALO</span><h3>Si llegan 4 pacientes por hora…</h3><div class="time-slots"><div><span>30 min</span><strong>λ = 2</strong></div><div class="active"><span>1 hora</span><strong>λ = 4</strong></div><div><span>2 horas</span><strong>λ = 8</strong></div></div><p>Al cambiar la longitud del intervalo, ajustamos el promedio esperado, <strong>si la tasa se mantiene constante</strong>.</p><div class="mini-formula">λ del intervalo = tasa × duración</div></article>
+            </div>
+          </section>
+
+          <section id="funcion" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 06 · CÁLCULO</span><h2>Función de probabilidad</h2><p>La fórmula permite calcular la probabilidad de observar una cantidad exacta de eventos.</p></div><div class="section-number">06<span>/10</span></div></div>
+            <div class="formula-board"><span class="board-label">FUNCIÓN DE PROBABILIDAD PUNTUAL</span><div class="primary-formula">P(X = x) = <span class="fraction"><span>e<sup>−λ</sup> · λ<sup>x</sup></span><span>x!</span></span></div><div class="formula-meta">x = 0, 1, 2, … <span>•</span> λ &gt; 0</div></div>
+            <div class="cumulative-board" aria-label="Fórmula de la probabilidad acumulada">
+              <div class="cumulative-board-copy"><span class="board-label">FUNCIÓN DE DISTRIBUCIÓN ACUMULADA</span><p>Para calcular la probabilidad de <strong>como máximo k eventos</strong>, sumamos las probabilidades desde 0 hasta k.</p></div>
+              <div class="cumulative-math"><span>P(X ≤ k) =</span><span class="sum-stack" aria-label="sumatoria desde i igual a cero hasta k"><sup>k</sup><b>∑</b><sub>i=0</sub></span><span class="fraction"><span>e<sup>−λ</sup> · λ<sup>i</sup></span><span>i!</span></span></div>
+            </div>
+            <div class="legend-grid"><div><strong>x</strong><span>Cantidad exacta de eventos</span></div><div><strong>λ</strong><span>Promedio del intervalo</span></div><div><strong>e</strong><span>Constante ≈ 2,71828</span></div><div><strong>x!</strong><span>Factorial de x</span></div></div>
+            <div class="calculator-card"><div class="calculator-copy"><span class="module-kicker">CALCULADORA INTERACTIVA</span><h3>Calculá una probabilidad</h3><p>Elegí el valor de λ, el número de eventos y el tipo de probabilidad. El resultado se actualiza automáticamente.</p><div class="calc-controls"><label>Parámetro λ<input id="calc-lambda" type="number" min="0.1" max="100" step="0.1" value="4" inputmode="decimal"></label><label>Número de eventos (x)<input id="calc-x" type="number" min="0" max="300" step="1" value="3" inputmode="numeric"></label><label>Tipo de probabilidad<select id="calc-mode"><option value="eq">Exactamente x · P(X = x)</option><option value="lte">Como máximo x · P(X ≤ x)</option><option value="gte">Al menos x · P(X ≥ x)</option><option value="gt">Más de x · P(X &gt; x)</option></select></label></div></div><div class="calculator-result" aria-live="polite"><span>RESULTADO</span><strong id="calc-result">0,1954</strong><small id="calc-percent">19,54 %</small><div id="calc-expression">P(X = 3) con λ = 4</div><p id="calc-explanation">Probabilidad de que ocurran exactamente 3 eventos.</p></div></div>
+            <div class="support-tip"><strong>¿Y la probabilidad acumulada?</strong> Para encontrar P(X ≤ x), sumamos las probabilidades desde 0 hasta x. Para «al menos x», usamos el complemento: P(X ≥ x) = 1 − P(X ≤ x − 1).</div>
+          </section>
+
+          <section id="medidas" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 07 · MEDIDAS</span><h2>Esperanza y varianza</h2><p>Poisson tiene una propiedad característica: ambas son numéricamente iguales.</p></div><div class="section-number">07<span>/10</span></div></div>
+            <div class="measures-grid"><article class="measure measure-one"><span>ESPERANZA MATEMÁTICA</span><div>E(X) = λ</div><p>Es el número promedio esperado de ocurrencias en el intervalo.</p></article><article class="measure measure-two"><span>VARIANZA</span><div>Var(X) = λ</div><p>Indica la dispersión de los conteos respecto de su media.</p></article><article class="measure measure-three"><span>DESVIACIÓN ESTÁNDAR</span><div>σ = √λ</div><p>Expresa la dispersión en las mismas unidades de conteo.</p></article></div><div class="concept-note">Si λ = 4, entonces la esperanza es <strong>4</strong>, la varianza es <strong>4</strong> y la desviación estándar es <strong>2</strong>.</div>
+          </section>
+
+          <section id="grafico" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 08 · LABORATORIO</span><h2>Descubrí la forma de Poisson</h2><p>Mové el control y observá cómo cambian las barras, la media y la dispersión.</p></div><div class="section-number">08<span>/10</span></div></div>
+            <div class="chart-card"><div class="chart-top"><div><span class="small-label">SIMULADOR DE DISTRIBUCIÓN</span><h3>P(X = x) según λ</h3></div><span class="live-tag"><i></i> Interactivo</span></div><div class="slider-container"><label for="lambda-slider">Valor del parámetro <strong id="slider-value">λ = 4</strong></label><input id="lambda-slider" type="range" min="0.5" max="15" step="0.5" value="4"><div class="slider-endpoints"><span>0,5</span><span>15</span></div></div><div class="chart-wrap"><svg id="poisson-chart" role="img" aria-label="Gráfico de barras de la distribución de Poisson" viewBox="0 0 760 310" preserveAspectRatio="xMidYMid meet"></svg></div><p id="chart-detail" class="chart-detail" aria-live="polite">Seleccioná una barra para consultar la probabilidad de ese valor.</p><div class="chart-stats"><div><small>Media</small><strong id="chart-mean">4</strong></div><div><small>Varianza</small><strong id="chart-var">4</strong></div><div><small>Desviación estándar</small><strong id="chart-std">2</strong></div><div><small>Valor más probable</small><strong id="chart-mode">3 y 4</strong></div></div></div>
+            <div class="compare-note"><strong>Observá:</strong> para λ pequeño, las probabilidades se concentran cerca de 0. Cuando λ aumenta, el centro de la distribución se desplaza hacia la derecha y su dispersión absoluta crece. Las barras permanecen separadas porque X es discreta.</div>
+          </section>
+
+          <section id="ejemplo" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 09 · PRÁCTICA GUIADA</span><h2>Un ejemplo contextualizado</h2><p>Retomamos el problema de llamadas que aparece en la ficha conceptual del grupo.</p></div><div class="section-number">09<span>/10</span></div></div>
+            <div class="case-banner"><div class="case-symbol">☎</div><div><span>CASO · SERVICIO DE ATENCIÓN</span><h3>Un servicio recibe, en promedio, 4 llamadas por hora.</h3><p>¿Cuál es la probabilidad de que en una hora reciba exactamente 3 llamadas? ¿Y como máximo 3?</p></div></div>
+            <div class="steps-grid"><article class="step"><span class="step-number">1</span><h3>Definir la variable</h3><p>X = número de llamadas recibidas en una hora.</p><div class="step-formula">X ~ Poisson(4)</div></article><article class="step"><span class="step-number">2</span><h3>Identificar los datos</h3><p>El promedio para una hora es λ = 4. Para la primera pregunta, x = 3.</p><div class="step-formula">λ = 4 · x = 3</div></article><article class="step"><span class="step-number">3</span><h3>Calcular e interpretar</h3><p>Aplicamos la función puntual para exactamente 3 y la acumulada para hasta 3.</p><div class="step-formula">P(X=3) ≈ 0,1954</div></article></div>
+            <div class="answer-grid"><div><span>EXACTAMENTE 3 LLAMADAS</span><strong>19,54 %</strong><p>P(X = 3) = e<sup>−4</sup> · 4<sup>3</sup> / 3! ≈ 0,1954.</p></div><div><span>COMO MÁXIMO 3 LLAMADAS</span><strong>43,35 %</strong><p>P(X ≤ 3) = P(0) + P(1) + P(2) + P(3) ≈ 0,4335.</p></div></div><div class="interpretation"><strong>Interpretación:</strong> bajo el modelo de Poisson con promedio de 4 llamadas por hora, hay aproximadamente un 19,54 % de probabilidad de recibir exactamente 3 llamadas y un 43,35 % de recibir 3 o menos.</div>
+            <div class="practice-mini">
+              <div class="practice-mini-head"><div><span class="module-kicker">EJERCICIO 2 · PARA RESOLVER CON LA CLASE</span><h3>Mensajes que llegan a un servidor</h3><p>Un servidor recibe en promedio <strong>2 mensajes por minuto</strong> (λ = 2). ¿Cuál es la probabilidad de que en un minuto no llegue ningún mensaje? ¿Y de que llegue al menos uno?</p></div><span class="practice-tag">Fácil</span></div>
+              <details class="practice-solution"><summary>Mostrar la resolución paso a paso <span aria-hidden="true">↓</span></summary><div class="practice-answer"><p><strong>Exactamente cero:</strong> P(X = 0) = e<sup>−2</sup> · 2<sup>0</sup> / 0! = e<sup>−2</sup> ≈ <strong>0,1353 = 13,53 %</strong>.</p><p><strong>Al menos un mensaje:</strong> P(X ≥ 1) = 1 − P(X = 0) ≈ <strong>0,8647 = 86,47 %</strong>.</p><p>Interpretación: hay aproximadamente un 86,47 % de probabilidad de recibir al menos un mensaje durante el minuto observado.</p></div></details>
+            </div>
+            <div class="extension-card"><span class="module-kicker">PARA IR UN POCO MÁS ALLÁ</span><h3>¿Y si la variable original fuera binomial?</h3><p>Cuando hay muchos ensayos y una probabilidad individual pequeña, Poisson puede funcionar como aproximación de una Binomial con <strong>λ = n · p</strong>. La calidad de la aproximación depende de los valores de n y p; las reglas vistas en la ficha son orientativas, no garantías universales.</p></div>
+          </section>
+
+          <section id="evaluacion" class="module section-observed">
+            <div class="section-heading"><div><span class="module-kicker">MÓDULO 10 · AUTOEVALUACIÓN</span><h2>Poné a prueba lo aprendido</h2><p>8 preguntas con retroalimentación inmediata. Podés volver a intentarlo cuantas veces quieras.</p></div><div class="section-number">10<span>/10</span></div></div>
+            <div class="quiz-shell"><div class="quiz-header"><div><span class="small-label">DESAFÍO FINAL</span><h3>¿Cuánto sabés de Poisson?</h3></div><div class="quiz-score" id="quiz-score">0 aciertos</div></div><div class="quiz-bar"><span id="quiz-bar-fill"></span></div><div id="quiz-content" aria-live="polite"><span class="quiz-step" id="quiz-step">Pregunta 1 de 8</span><h4 id="quiz-question">Cargando pregunta…</h4><div id="quiz-options" class="quiz-options"></div><div id="quiz-feedback" class="quiz-feedback" hidden></div><button type="button" class="btn btn-primary quiz-next" id="quiz-next" disabled>Comprobar respuesta</button></div><div id="quiz-finish" hidden class="quiz-finish"><div class="finish-mark">✦</div><h3 id="finish-title">¡Recorrido completado!</h3><p id="finish-text"></p><strong id="finish-score"></strong><div id="finish-advice"></div><button type="button" class="btn btn-primary" id="quiz-restart">Volver a intentar ↻</button></div></div>
+            <div class="reference-assessment"><div><strong>Otra oportunidad para practicar</strong><p>También podés acceder al EVA y a la evaluación práctica realizados durante la Fase 3.</p></div><div class="reference-links"><a href="https://bryan-villagra.github.io/EVA_Fase3/" target="_blank" rel="noopener">EVA Fase 3 ↗</a><a href="https://script.google.com/macros/s/AKfycbwQic9NjShH9UHOvJ8vk2nKoL3EoAIfrzMKBqvx6arMWW6gPZDVT3IC1M9oFAELSOUSjQ/exec" target="_blank" rel="noopener">Evaluación práctica ↗</a></div></div>
+          </section>
+
+          <section id="recursos" class="resources-section"><div class="section-heading"><div><span class="module-kicker">MATERIAL COMPLEMENTARIO</span><h2>Recursos elaborados en las fases anteriores</h2><p>Reunimos el trabajo del grupo para que puedas profundizar y repasar.</p></div></div>
+            <div class="materials-grid">
+              <a class="material" href="recursos/ficha-conceptual-poisson.pdf" target="_blank" rel="noopener"><span class="material-icon">▤</span><div><small>FASE 2 · PDF</small><strong>Ficha conceptual</strong><p>Definiciones, fórmulas, propiedades y un ejemplo.</p></div><span class="material-arrow">↗</span></a>
+              <a class="material" href="mapa-interactivo/index.html" target="_blank" rel="noopener"><span class="material-icon">⌘</span><div><small>FASE 2 · INTERACTIVO</small><strong>Mapa conceptual</strong><p>Relaciones entre los conceptos principales.</p></div><span class="material-arrow">↗</span></a>
+              <a class="material" href="recursos/infografia-poisson.png" target="_blank" rel="noopener"><span class="material-icon">▧</span><div><small>FASE 3 · IMAGEN</small><strong>Infografía de Poisson</strong><p>Resumen visual elaborado por el grupo.</p></div><span class="material-arrow">↗</span></a>
+              <a class="material" href="https://bryan-villagra.github.io/EVA_Fase3/" target="_blank" rel="noopener"><span class="material-icon">✎</span><div><small>FASE 3 · INTERACTIVO</small><strong>EVA y algoritmo de decisión</strong><p>Autoevaluación y recorrido guiado.</p></div><span class="material-arrow">↗</span></a>
+              <a class="material" href="https://script.google.com/macros/s/AKfycbwQic9NjShH9UHOvJ8vk2nKoL3EoAIfrzMKBqvx6arMWW6gPZDVT3IC1M9oFAELSOUSjQ/exec" target="_blank" rel="noopener"><span class="material-icon">✓</span><div><small>FASE 3 · PRÁCTICA</small><strong>Evaluación complementaria</strong><p>Acceso a la actividad práctica del grupo.</p></div><span class="material-arrow">↗</span></a>
+            </div><details class="ai-disclosure"><summary>¿Cómo se utilizó la IA en este recurso?</summary><p>Se utilizó asistencia de IA para organizar los contenidos de las fases anteriores, redactar explicaciones didácticas y programar interacciones (simulador, calculadora y autoevaluación). Los resultados numéricos del ejemplo se comprobaron mediante cálculo y las condiciones del modelo se explicitan para evitar aplicaciones incorrectas. La selección crítica de materiales, la revisión final y la responsabilidad académica corresponden al grupo.</p></details>
+          </section>
+          <footer class="footer"><div><strong>Distribución de Poisson</strong><span>EVA educativo · Fase 4 · Probabilidad y Estadística</span></div><div class="names">Grupo 5 · Gómez Segura, Ana Isabel · Rios, Luz Morena · Villagra, Brian Gustavo<br>Tecnicatura y Licenciatura en Ciencias de Datos</div><a href="#inicio" class="to-top">↑ Volver arriba</a></footer>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

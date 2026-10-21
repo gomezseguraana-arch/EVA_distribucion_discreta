@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mapa conceptual interactivo sobre la Distribución de Poisson - Grupo 5">
+  <title>Distribución de Poisson | Mapa Conceptual Interactivo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Probabilidad · Grupo 5</p>
+      <h1>Distribución de Poisson</h1>
+      <p class="subtitle">
+        Mapa conceptual interactivo. Seleccioná cada concepto para explorar
+        cómo se relaciona con la distribución.
+      </p>
+      <div class="members" aria-label="Integrantes del grupo">
+        <span>Gómez Segura, Ana Isabel</span>
+        <span>Rios, Luz Morena</span>
+        <span>Villagra, Brian Gustavo</span>
+        <span>Tec. y Lic. en Ciencias de Datos</span>
+      </div>
+    </header>
+
+    <section class="map-section" aria-labelledby="map-title">
+      <h2 id="map-title" class="sr-only">Mapa conceptual</h2>
+
+      <div class="map-grid">
+        <div class="column">
+          <div class="concept">
+            <p class="relation">se caracteriza por</p>
+            <button class="concept-card" data-key="caracteristicas" type="button">
+              <strong>Características</strong>
+              <span>Conteo discreto de ocurrencias.</span>
+            </button>
+          </div>
+
+          <div class="concept">
+            <p class="relation">se aplica cuando</p>
+            <button class="concept-card" data-key="condiciones" type="button">
+              <strong>Condiciones de aplicación</strong>
+              <span>Eventos observados en tiempo o espacio.</span>
+            </button>
+          </div>
+
+          <div class="concept">
+            <p class="relation">puede tomar</p>
+            <button class="concept-card" data-key="valores" type="button">
+              <strong>Valores de X</strong>
+              <span>0, 1, 2, 3, …</span>
+            </button>
+          </div>
+
+          <div class="concept">
+            <p class="relation">depende de</p>
+            <button class="concept-card" data-key="lambda" type="button">
+              <strong>Parámetro λ</strong>
+              <span>Promedio de ocurrencias.</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="center-column">
+          <article class="central-node">
+            <p class="central-kicker">Distribución de probabilidad discreta</p>
+            <h2>Poisson</h2>
+            <p>
+              Modela el número de veces que ocurre un evento en un intervalo
+              de tiempo o en una región específica del espacio.
+            </p>
+          </article>
+
+          <article class="detail-panel" aria-live="polite">
+            <p class="detail-label">Detalle seleccionado</p>
+            <h3 id="detail-title">Explorá el mapa</h3>
+            <p id="detail-text">
+              Elegí uno de los conceptos para ampliar la información y
+              visualizar su relación con Poisson.
+            </p>
+            <div id="detail-formula" class="formula hidden"></div>
+          </article>
+
+          <nav class="controls" aria-label="Controles del mapa conceptual">
+            <button id="prev" type="button">← Anterior</button>
+            <button id="next" class="primary" type="button">Siguiente →</button>
+            <button id="reset" type="button">Reiniciar</button>
+          </nav>
+        </div>
+
+        <div class="column">
+          <div class="concept">
+            <p class="relation">su probabilidad exacta se calcula con</p>
+            <button class="concept-card" data-key="puntual" type="button">
+              <strong>Probabilidad puntual</strong>
+              <span>Probabilidad de exactamente x ocurrencias.</span>
+            </button>
+          </div>
+
+          <div class="concept">
+            <p class="relation">su acumulada se calcula con</p>
+            <button class="concept-card" data-key="acumulada" type="button">
+              <strong>Probabilidad acumulada</strong>
+              <span>Probabilidad de hasta x ocurrencias.</span>
+            </button>
+          </div>
+
+          <div class="concept">
+            <p class="relation">tiene como valor esperado</p>
+            <button class="concept-card" data-key="esperanza" type="button">
+              <strong>Esperanza matemática</strong>
+              <span>E(X) = λ</span>
+            </button>
+          </div>
+
+          <div class="concept">
+            <p class="relation">presenta dispersión mediante</p>
+            <button class="concept-card" data-key="dispersion" type="button">
+              <strong>Varianza y desvío</strong>
+              <span>V(X) = λ · σ = √λ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <div class="concept">
+          <p class="relation">se observa, por ejemplo, en</p>
+          <button class="concept-card" data-key="aplicaciones" type="button">
+            <strong>Aplicaciones prácticas</strong>
+            <span>Pacientes, llamadas, células, fallas…</span>
+          </button>
+        </div>
+
+        <div class="concept">
+          <p class="relation">puede aproximar a</p>
+          <button class="concept-card" data-key="binomial" type="button">
+            <strong>Distribución Binomial</strong>
+            <span>Cuando n es grande y p es pequeña.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+</main>
+
+  <script src="script.js"></script>
+</body>
+</html>

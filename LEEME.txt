@@ -1,0 +1,37 @@
+EVA INTERACTIVO SOBRE LA DISTRIBUCIÓN DE POISSON · FASE 4
+Grupo 5 · Probabilidad y Estadística
+
+CÓMO ABRIRLO
+1. Descomprimí la carpeta EVA_Poisson_Fase4.
+2. Abrí index.html con un navegador moderno (Chrome, Edge o Firefox).
+3. La teoría, la calculadora, el simulador, el mapa conceptual y la autoevaluación del EVA funcionan sin instalar aplicaciones.
+4. Para abrir los videos, el EVA de la Fase 3 y la evaluación práctica externa se necesita conexión a internet.
+
+CÓMO PUBLICARLO EN GITHUB PAGES
+1. Creá un repositorio nuevo en GitHub (por ejemplo, eva-poisson-fase4).
+2. Subí el CONTENIDO de la carpeta EVA_Poisson_Fase4 a la raíz del repositorio:
+   index.html, app.js, styles.css, mapa-interactivo/, recursos/, LEEME.txt
+3. En Settings > Pages, elegí Deploy from a branch > main > /(root) y guardá.
+4. Esperá la publicación y abrí la dirección que GitHub muestre.
+
+RECURSOS INCLUIDOS
+- Ficha conceptual PDF de la Fase 2.
+- Mapa conceptual interactivo local de la Fase 2.
+- Infografía de la Fase 3.
+- Links a los dos videos de la Fase 1.
+- Links al EVA y evaluación práctica de la Fase 3.
+
+Este recurso es de uso educativo. Antes de su entrega, el grupo debe revisar los textos y las citas y probar enlaces externos en su navegador.
+
+PARA LA EXPOSICIÓN (RECORRIDO SUGERIDO: 8–12 MINUTOS)
+- Definición, variable X y condiciones de aplicación: 2–3 min.
+- Parámetro lambda, función puntual, acumulada y medidas: 3 min.
+- Ejemplo 1 de llamadas (λ=4): explicar P(X=3) y P(X≤3): 2 min.
+- Ejercicio 2 con mensajes (λ=2): preguntar al público antes de revelar la solución: 1 min.
+- Demostración breve con el gráfico y cierre: 1–2 min.
+- El resto de la página y la autoevaluación sirven para consultas y estudio.
+
+IMPORTANTE: la presentación principal está integrada en UNA SOLA PÁGINA (index.html),
+con navegación interna. Las demás carpetas contienen estilos, código de interacción y
+material complementario. El mapa conceptual y los recursos se abren solo si se desea
+profundizar; no son páginas adicionales necesarias para exponer.
